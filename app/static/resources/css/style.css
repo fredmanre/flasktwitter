@@ -1,0 +1,11 @@
+/* INITIALS AND GLOBALS CONFIGURE */
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	text-rendering: optimizeLegibility;
+	line-height: 145%;
+}

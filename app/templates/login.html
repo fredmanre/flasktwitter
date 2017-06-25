@@ -1,0 +1,43 @@
+{% extends "base/base.html" %}
+
+{% block tittle %}
+    {{ super() }} - Login
+{% endblock tittle %}
+
+{% block content %}
+    <div class="col-md-6 offset-md-3">
+        <form action="" method="POST">
+        {{form.csrf_token}}
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="">Username</label>
+                {{form.username(class="form-control", placeholder="nombre de usuario")}}
+                {% if form.errors.username %}
+                    <div class="alert" role="alert">
+                            {% for e in form.errors.username  %}
+                                <p class="text-danger">{{e}}</p>
+                            {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                {{form.password(class="form-control")}}
+                {% if form.errors.password %}
+                    <div class="alert" role="alert">
+                            {% for e in form.errors.password  %}
+                                <p class="text-danger">{{e}}</p>
+                            {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-check">
+                <label for="" class="form-check-label">
+                    {{form.remember_me(class="form-check-input")}}
+                    Recordarme
+                </label>
+            </div>
+            <button type="submit" class="btn btn-secondary">Ingresar</button>
+        </form>
+    </div>
+{% endblock content %}
